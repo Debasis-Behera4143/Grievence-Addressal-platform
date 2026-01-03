@@ -35,18 +35,40 @@ There is a need for an AI-powered system that can automatically analyze, classif
 
 ## 📖 Project Overview
 
-SmartGov AI is an AI-driven grievance redressal platform that helps government bodies automatically understand, prioritize, and route citizen complaints using Natural Language Processing (NLP).
+SmartGov AI is an industry-ready AI-driven grievance redressal platform that helps government bodies automatically understand, prioritize, and route citizen complaints using advanced Natural Language Processing (NLP) and Machine Learning.
 
-The system accepts free-text grievances, analyzes them using AI, classifies them into categories (e.g., sanitation, healthcare, infrastructure), determines priority based on urgency and severity, and routes them to the appropriate department. This reduces manual workload, speeds up resolution, and improves transparency and accountability.
+The system accepts free-text grievances, analyzes them using multiple AI models, classifies them into categories, determines priority based on urgency and severity, performs sentiment analysis, and routes them to the appropriate department with estimated resolution time. This reduces manual workload, speeds up resolution, and improves transparency and accountability.
 
 ## 🧠 Key Features
 
-- Free-text grievance submission
-- AI-based complaint classification (NLP)
-- Priority detection (High / Medium / Low)
-- Automatic department routing
-- Admin dashboard for grievance monitoring
-- Dataset-driven, scalable architecture
+### 🤖 AI/ML Capabilities
+- **Multi-Model Training**: Compares 4 ML algorithms (Logistic Regression, Random Forest, Gradient Boosting, Naive Bayes)
+- **Smart Classification**: 6 complaint categories with 67%+ accuracy
+- **4-Level Priority System**: Critical, High, Medium, Low
+- **Sentiment Analysis**: Real-time emotion detection using NLTK VADER
+- **Keyword Extraction**: Automatic topic identification
+- **Resolution Time Estimation**: Dynamic calculation based on category and priority
+
+### 📊 Analytics & Insights
+- Real-time interactive dashboard
+- Live statistics and metrics
+- 7-day trend analysis
+- Category/priority distribution charts
+- Searchable complaint history
+
+### 💾 Database Management
+- SQLite database with persistent storage
+- Complete complaint tracking
+- Status updates and history
+- Export to CSV functionality
+- Advanced search capabilities
+
+### 🎨 User Interface
+- Modern gradient design with professional styling
+- Multi-page navigation (Submit, Analytics, Track, Admin)
+- Mobile-responsive layout
+- Real-time AI feedback
+- Interactive visualizations using Plotly
 
 ## 🛠️ Tech Stack
 
