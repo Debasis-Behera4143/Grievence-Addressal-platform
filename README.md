@@ -16,7 +16,7 @@ There is a need for an AI-powered system that can automatically analyze, classif
 
 ## 👥 Team
 
-**Team ByteQuest AI**
+**Team techno_guys**
 
 ## 🌐 Deployed Link (optional)
 
@@ -49,101 +49,160 @@ The system accepts free-text grievances, analyzes them using AI, classifies them
 
 ## 🛠️ Tech Stack
 
-- Frontend: React.js, HTML, CSS, JavaScript  
 - Backend: Streamlit (Python)  
-- AI / ML: Python, Transformers / NLP models  
+- AI / ML: Python, scikit-learn, TF-IDF Vectorizer, Logistic Regression  
 - Dataset: Structured grievance dataset (CSV)
+- Libraries: pandas, joblib, NLTK
 
 ## ⚙️ Setup and Installation
 
-1. Clone the repository
+### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/smartgov-ai.git
-cd smartgov-ai
+git clone https://github.com/ByteQuest-2025/GFGBQ-Team-techno_guys
+cd GFGBQ-Team-techno_guys
 ```
 
-1. Frontend (React)
+### 2. Create and activate a virtual environment (recommended)
 
-```bash
-cd frontend
-npm install
-npm start
-```
-
-The React app will run at: <http://localhost:3000>
-
-1. Backend (Streamlit)
-
-Create and activate a virtual environment (recommended)
-
-- macOS / Linux:
+**macOS / Linux:**
 
 ```bash
 python -m venv venv
 source venv/bin/activate
 ```
 
-- Windows (PowerShell):
+**Windows (PowerShell):**
 
 ```powershell
 python -m venv venv
 .\venv\Scripts\Activate.ps1
 ```
 
-- Windows (cmd.exe):
+**Windows (cmd.exe):**
 
 ```cmd
 python -m venv venv
 venv\Scripts\activate
 ```
 
-Install dependencies:
+### 3. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Run Streamlit backend:
+### 4. Verify the setup
+
+Run the verification script to check if everything is set up correctly:
+
+```bash
+python verify_setup.py
+```
+
+This will check:
+- Data file availability (`data/cleaned_data.csv`)
+- Required libraries installation
+- Project structure
+
+### 5. Prepare your data
+
+Place your grievance dataset in the `data/` folder as `cleaned_data.csv`. The CSV should have at least these columns:
+- `complaint_text`: The grievance text
+- `category`: The category label (e.g., Sanitation, Healthcare, Infrastructure, etc.)
+
+Refer to [DATA_PREPARATION_GUIDE.md](DATA_PREPARATION_GUIDE.md) for detailed data preparation instructions.
+
+### 6. Train the model
+
+```bash
+python train_model.py
+```
+
+This will:
+- Load the data from `data/cleaned_data.csv`
+- Train a Logistic Regression model with TF-IDF features
+- Save the trained model to `model/classifier.pkl`
+
+### 7. Run the Streamlit application
 
 ```bash
 streamlit run app.py
 ```
 
-Backend will run at: <http://localhost:8501>
+The application will run at: <http://localhost:8501>
 
 ## ▶️ Usage
 
-1. Open the React frontend in your browser (<http://localhost:3000>).  
-2. Enter a grievance in free text (e.g., “Garbage not collected for 7 days”) and submit.  
-3. The AI backend processes the text and:
+1. Open your browser and navigate to <http://localhost:8501>
+2. Enter a grievance in the text area (e.g., "Garbage not collected for 7 days")
+3. Click the "Analyze Complaint" button
+4. The AI system will:
+   - Classify the grievance into a category (Sanitation, Healthcare, Infrastructure, etc.)
+   - Determine the priority level (Critical or Normal) based on keywords
+   - Assign it to the relevant department
 
-- Classifies the grievance category
-- Determines priority level
-- Assigns the relevant department  
+## 🧠 How It Works
 
-4. Admin dashboard displays processed grievances with status and history.
+### Model Training (`train_model.py`)
+
+The system uses a machine learning pipeline with:
+- **TF-IDF Vectorizer**: Converts text complaints into numerical features
+- **Logistic Regression**: Classifies complaints into categories
+- Trained on labeled grievance data
+
+### Priority Detection (`utils.py`)
+
+Keywords are analyzed to determine urgency:
+- **Critical**: Contains words like "accident", "emergency", "hospital", "fire", "danger", "life", "death"
+- **Normal**: All other complaints
+
+### Department Routing (`utils.py`)
+
+Each category is mapped to the appropriate department:
+- Sanitation → Municipal Sanitation Department
+- Utilities → Electricity / Water Department
+- Healthcare → Health Department
+- Public Safety → Police Department
+- Infrastructure → Public Works Department
+- Administration → District Administration
+
+## � Project Structure
+
+```
+grievance_ai_project/
+├── app.py                      # Streamlit web application
+├── train_model.py              # Model training script
+├── utils.py                    # Helper functions (priority & department mapping)
+├── verify_setup.py             # Setup verification script
+├── requirements.txt            # Python dependencies
+├── README.md                   # Project documentation
+├── DATA_PREPARATION_GUIDE.md   # Data preparation instructions
+├── data/
+│   ├── cleaned_data.csv        # Training dataset
+│   └── sample_cleaned_data.csv # Sample data (if available)
+└── model/
+    └── classifier.pkl          # Trained model (generated after training)
+```
 
 ## 📸 Screenshots
 
-- Citizen Grievance Submission Interface  
-  `/screenshots/citizen_form.png`
-
+- Grievance Submission Interface  
 - AI Classification & Priority Output  
-  `/screenshots/ai_output.png`
+- Department Assignment
 
-- Admin Dashboard  
-  `/screenshots/admin_dashboard.png`
-
-(Add screenshots to the referenced paths)
+(Add screenshots as needed)
 
 ## 📈 Future Enhancements
 
+- Enhanced ML models (Random Forest, Gradient Boosting, or Deep Learning)
 - Multilingual grievance support (Hindi and regional languages)  
 - Voice-based complaint submission (speech-to-text)  
+- Real-time dashboard for monitoring grievances
 - SLA tracking and escalation alerts  
 - Analytics dashboard for governance insights  
 - Mobile app integration
+- Integration with government grievance portals
 
 ## 🏆 Hackathon Value Proposition
 
