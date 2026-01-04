@@ -15,7 +15,9 @@ from utils import (
 from database import GrievanceDatabase
 from report_generator import generate_pdf_report
 
-# ================= PAGE CONFIG =================
+# =====================================================
+# PAGE CONFIG
+# =====================================================
 st.set_page_config(
     page_title="AI Grievance Redressal System",
     page_icon="🇮🇳",
@@ -23,16 +25,18 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# ================= CSS =================
+# =====================================================
+# CSS (ONE HEADER ONLY)
+# =====================================================
 st.markdown("""
 <style>
 
-/* Push app down so header not hidden */
+/* Push content down so Streamlit toolbar does not overlap */
 .block-container {
     padding-top: 4.5rem !important;
 }
 
-/* Header */
+/* SINGLE Government Header */
 .gov-header {
     width: 100%;
     background: linear-gradient(90deg, #FF6B35, #F7931E);
@@ -64,9 +68,9 @@ st.markdown("""
     border-bottom: 3px solid #FF6B35 !important;
 }
 
-/* Card */
+/* Card UI */
 .card {
-    background-color: rgba(128,128,128,0.08);
+    background-color: rgba(128, 128, 128, 0.08);
     padding: 2rem;
     border-radius: 12px;
     border-left: 6px solid #FF6B35;
@@ -76,41 +80,24 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# ================= HEADER =================
+# =====================================================
+# HEADER (ONLY ONCE — DO NOT DUPLICATE)
+# =====================================================
 st.markdown("""
 <div class="gov-header">
 🇮🇳 Government of India | AI-Powered Grievance Redressal System
 </div>
 """, unsafe_allow_html=True)
-# =====================================================
-# HEADER + TOP NAVIGATION
-# =====================================================
-st.markdown(
-    "<div class='gov-header'>🇮🇳 GOVERNMENT OF INDIA | AI-Powered Grievance Redressal System</div>",
-    unsafe_allow_html=True
-)
 
-st.markdown("<div class='top-nav'>", unsafe_allow_html=True)
-page = st.radio(
-    "Navigation Menu",
-    ["🏠 Submit Complaint", "📊 Dashboard", "🔍 Track Complaint", "⚙️ Admin Panel"],
-    horizontal=True,
-    label_visibility="collapsed"
-)
-st.markdown("</div>", unsafe_allow_html=True)
-
-# ================= DATABASE & MODEL =================
+# =====================================================
+# DATABASE & MODEL
+# =====================================================
 db = GrievanceDatabase()
 
 @st.cache_resource
 def load_model():
     path = "model/classifier.pkl"
-
     return joblib.load(path) if os.path.exists(path) else None
-
-    if os.path.exists(path):
-        return joblib.load(path)
-    return None
 
 model = load_model()
 
@@ -122,7 +109,9 @@ def predict_category(text):
             return "General"
     return "Administrative"
 
-# ================= TABS =================
+# =====================================================
+# NAVIGATION TABS
+# =====================================================
 tabs = st.tabs([
     "🏠 Submit Complaint",
     "📊 Dashboard",
@@ -130,7 +119,9 @@ tabs = st.tabs([
     "⚙️ Admin Panel"
 ])
 
-# ================= TAB 1 =================
+# =====================================================
+# TAB 1: SUBMIT COMPLAINT
+# =====================================================
 with tabs[0]:
     st.markdown("## Register New Grievance")
 
@@ -138,6 +129,7 @@ with tabs[0]:
         st.markdown("<div class='card'>", unsafe_allow_html=True)
 
         col1, col2 = st.columns(2)
+
         with col1:
             name = st.text_input("Full Name *")
             email = st.text_input("Email Address *")
@@ -151,11 +143,14 @@ with tabs[0]:
             )
 
         st.markdown("</div>", unsafe_allow_html=True)
-        submit = st.form_submit_button("🚀 Submit Official Complaint", use_container_width=True)
+        submit = st.form_submit_button(
+            "🚀 Submit Official Complaint",
+            use_container_width=True
+        )
 
     if submit:
         if not name or not email or not complaint_text:
-            st.error("Please fill all required fields")
+            st.error("Please fill all required fields (*)")
         else:
             category = predict_category(complaint_text)
             priority = get_priority(complaint_text)
@@ -164,7 +159,6 @@ with tabs[0]:
             keywords = extract_keywords(complaint_text)
             resolution = estimate_resolution_time(category, priority)
             ticket_id = generate_ticket_id()
-
             submitted_at = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
             complaint_data = {
@@ -190,6 +184,7 @@ with tabs[0]:
             st.markdown(f"### 🎫 Ticket ID: `{ticket_id}`")
             st.balloons()
 
+            # ===== PDF GENERATION =====
             pdf_path = generate_pdf_report(
                 ticket_id,
                 {
@@ -216,38 +211,53 @@ with tabs[0]:
                     mime="application/pdf"
                 )
 
-# ================= TAB 2 =================
+# =====================================================
+# TAB 2: DASHBOARD
+# =====================================================
 with tabs[1]:
+    st.markdown("## Analytics Overview")
     data = db.get_all_complaints()
     if data:
         df = pd.DataFrame(data)
         st.bar_chart(df["department"].value_counts())
     else:
-        st.info("No complaints yet")
+        st.info("No complaints available")
 
-# ================= TAB 3 =================
+# =====================================================
+# TAB 3: TRACK COMPLAINT
+# =====================================================
 with tabs[2]:
+    st.markdown("## Track Complaint Status")
     ticket = st.text_input("Enter Ticket ID")
     if st.button("Search"):
         res = db.get_complaint_by_ticket(ticket)
         if res:
             st.json(res)
         else:
-            st.error("Ticket not found")
+            st.error("❌ Ticket not found")
 
-# ================= TAB 4 =================
+# =====================================================
+# TAB 4: ADMIN PANEL
+# =====================================================
 with tabs[3]:
-    if "admin" not in st.session_state:
-        st.session_state.admin = False
+    if "admin_auth" not in st.session_state:
+        st.session_state.admin_auth = False
 
-    if not st.session_state.admin:
+    if not st.session_state.admin_auth:
         pwd = st.text_input("Admin Password", type="password")
         if st.button("Login") and pwd == "admin123":
-            st.session_state.admin = True
+            st.session_state.admin_auth = True
             st.rerun()
     else:
-        st.button("Logout", on_click=lambda: st.session_state.update({"admin": False}))
-        st.dataframe(pd.DataFrame(db.get_all_complaints()), use_container_width=True)
+        st.button("Logout", on_click=lambda: st.session_state.update({"admin_auth": False}))
+        admin_data = db.get_all_complaints()
+        if admin_data:
+            st.dataframe(pd.DataFrame(admin_data), use_container_width=True)
 
-# ================= FOOTER =================
-st.markdown("<hr><center>🇮🇳 National AI Redressal Framework | 2026</center>", unsafe_allow_html=True)
+# =====================================================
+# FOOTER
+# =====================================================
+st.markdown(
+    "<hr><center>🇮🇳 National AI Redressal Framework | 2026</center>",
+    unsafe_allow_html=True
+)
