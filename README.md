@@ -434,10 +434,6 @@ docker run -p 8501:8501 grievance-app
 **Repository:** https://github.com/Debasis-Behera4143/Grievence-Addressal-platform  
 **Issues:** [Report a bug](https://github.com/Debasis-Behera4143/Grievence-Addressal-platform/issues)
 
-### **Contributing**
-
-We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
 ### **Project Files:**
 - Main App: `app.py`
 - Database: `database.py`
@@ -460,16 +456,6 @@ We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 ## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 📚 Documentation
-
-- **[README.md](README.md)** - Project overview and setup
-- **[DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)** - Detailed deployment instructions
-- **[DATABASE_ANALYSIS.md](DATABASE_ANALYSIS.md)** - Database schema documentation
-- **[CONTRIBUTING.md](CONTRIBUTING.md)** - Contribution guidelines
-- **[CHANGELOG.md](CHANGELOG.md)** - Version history and changes
 
 ---
 
