@@ -1,3 +1,17 @@
+"""
+Utility Functions Module
+
+Provides helper functions for the AI Grievance Redressal System including:
+- Priority detection based on keyword analysis
+- Department mapping for categories
+- Sentiment analysis using NLTK VADER
+- Keyword extraction from complaints
+- Resolution time estimation
+- Ticket ID generation
+
+Author: Debasis Behera
+"""
+
 import re
 from datetime import datetime
 import nltk

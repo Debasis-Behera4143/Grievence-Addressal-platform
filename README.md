@@ -1,30 +1,21 @@
-# 🇮🇳 AI-Powered Grievance Redressal System
+# 🇮🇳 SmartGov AI - Intelligent Grievance Redressal System
 
----
-
-## 📌 Overview
-
-Government bodies receive thousands of citizen grievances daily related to infrastructure, sanitation, healthcare, public safety, utilities, and administrative delays. These grievances are often unstructured (free text, mixed languages) and manually processed, which slows resolution. The lack of intelligent prioritization and routing causes delayed resolution of critical issues, citizen dissatisfaction, and reduced transparency.
-
-**SmartGov AI** addresses these challenges using artificial intelligence and machine learning.
-
----
-
-## 👨‍💻 Author
-
-**Debasis Behera**  
-**GitHub:** [Debasis-Behera4143](https://github.com/Debasis-Behera4143)
-
----
-
-## 🌟 SmartGov AI - Intelligent Grievance Redressal System
-
-A production-ready AI-powered system for intelligent government grievance classification, prioritization, and management. This enterprise-grade platform helps government bodies automatically understand, prioritize, and route citizen complaints using advanced Natural Language Processing (NLP) and Machine Learning.
+> **A production-ready AI-powered platform for intelligent government grievance classification, prioritization, and management**
 
 [![Python](https://img.shields.io/badge/Python-3.13-blue.svg)](https://www.python.org/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.52-FF4B4B.svg)](https://streamlit.io/)
 [![ML Accuracy](https://img.shields.io/badge/ML%20Accuracy-69.41%25-success.svg)](#ml-model-performance)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
+**Author:** [Debasis Behera](https://github.com/Debasis-Behera4143)
+
+---
+
+## 📌 Overview
+
+Government bodies process thousands of citizen grievances daily regarding infrastructure, sanitation, healthcare, public safety, utilities, and administrative delays. Manual processing of unstructured complaints leads to delayed resolution, citizen dissatisfaction, and reduced transparency.
+
+**SmartGov AI** solves this using enterprise-grade AI/ML to automatically classify, prioritize, and route complaints - reducing manual workload by 80% and improving resolution times.
 
 ### **Key Highlights:**
 
@@ -39,17 +30,21 @@ A production-ready AI-powered system for intelligent government grievance classi
 ✅ **Production Ready** - All errors fixed, deployment guide included
 
 ### **How It Works:**
-1. **Citizen submits complaint** via web interface with contact details
-2. **AI analyzes text** using TF-IDF vectorization (30K features, 1-4 grams)
-3. **ML models predict** category with voting ensemble
-4. **System determines** priority (Critical/High/Medium/Low) using keyword analysis
-5. **Department routing** based on category classification
-6. **Sentiment analysis** evaluates citizen emotion
-7. **Resolution time** estimated dynamically
-8. **PDF report** generated with ticket ID
-9. **Admin panel** for status updates and management
 
-**Impact:** This reduces manual workload by 80%, speeds up resolution time, and improves transparency and accountability.
+```mermaid
+Citizen → Submit Complaint → AI Analysis (TF-IDF) → ML Prediction (5 Models)
+    → Priority Detection → Department Routing → Sentiment Analysis
+    → Resolution Estimation → PDF Report Generated → Admin Management
+```
+
+1. Citizen submits complaint via web interface
+2. AI analyzes text using TF-IDF (30K features, 1-4 grams)
+3. Ensemble ML models predict category (69.41% accuracy)
+4. System assigns priority based on keyword analysis
+5. Auto-routes to appropriate department
+6. Sentiment analysis evaluates emotion
+7. Resolution time estimated dynamically
+8. PDF report generated with unique ticket ID
 
 ---
 
@@ -98,30 +93,15 @@ A production-ready AI-powered system for intelligent government grievance classi
 
 ## 🔧 Technology Stack
 
-### **Backend & Framework**
-- **Streamlit 1.52.1** - Web application framework
-- **Python 3.13** - Core programming language
-
-### **Machine Learning**
-- **scikit-learn 1.7.2** - ML model training and inference
-- **TF-IDF Vectorizer** - Text feature extraction (30K features, 1-4 grams)
-- **Ensemble Methods** - VotingClassifier, StackingClassifier
-- **Models**: Logistic Regression, Random Forest, Gradient Boosting, Naive Bayes, Linear SVM
-- **joblib 1.5.2** - Model serialization
-
-### **Natural Language Processing**
-- **NLTK 3.9.2** - Sentiment analysis (VADER)
-- **Regex** - Text preprocessing and keyword extraction
-
-### **Database & Storage**
-- **SQLite3** - Lightweight relational database
-- **pandas 2.3.3** - Data manipulation and CSV export
-
-### **Visualization**
-- **Plotly 5.24.1** - Interactive charts and graphs
-
-### **Document Generation**
-- **ReportLab 4.2.2** - PDF report creation
+| Category | Technologies |
+|----------|-------------|
+| **Core** | Python 3.13, Streamlit 1.52 |
+| **ML/AI** | scikit-learn 1.7.2, TF-IDF (30K features), Ensemble Methods |
+| **NLP** | NLTK 3.9.2 (VADER sentiment analysis) |
+| **Database** | SQLite3, pandas 2.3.3 |
+| **Visualization** | Plotly 5.24.1 |
+| **Documents** | ReportLab 4.2.2 |
+| **Models** | Logistic Regression, Random Forest, Gradient Boosting, Naive Bayes, Linear SVM |
 
 ---
 
@@ -283,20 +263,21 @@ Grievence-Addressal-platform/
 
 ## 📊 ML Model Performance
 
-### **Best Model: Voting Ensemble Classifier**
-- **Accuracy:** 69.41%
+### 🏆 Best Model: Voting Ensemble Classifier (69.41% Accuracy)
 - **Method:** Soft voting across 5 base models
-- **Cross-Validation:** 15-fold StratifiedKFold
+- **Validation:** 15-fold StratifiedKFold cross-validation
+- **Training:** 80-20 train-test split on 500+ labeled complaints
 
-### **Individual Model Performance:**
-| Model | Accuracy | Training Time |
-|-------|----------|---------------|
-| Logistic Regression | 67.06% | Fast |
-| Random Forest | 58.82% | Moderate |
-| Gradient Boosting | 58.82% | Slow |
-| Naive Bayes | 61.18% | Very Fast |
-| Linear SVM | 67.06% | Fast |
-| **Voting Ensemble** | **69.41%** | Moderate |
+### Individual Model Comparison
+
+| Model | Accuracy | Speed | Selected |
+|-------|----------|-------|----------|
+| **Voting Ensemble** | **69.41%** | Moderate | ✅ |
+| Logistic Regression | 67.06% | Fast | ✅ |
+| Linear SVM | 67.06% | Fast | ✅ |
+| Naive Bayes | 61.18% | Very Fast | ✅ |
+| Random Forest | 58.82% | Moderate | ✅ |
+| Gradient Boosting | 58.82% | Slow | ✅ |
 
 ### **Feature Engineering:**
 - **TF-IDF Parameters:**
@@ -317,17 +298,34 @@ Grievence-Addressal-platform/
 
 ---
 
-## 🔐 Admin Credentials
+## 🔐 Security Configuration
 
-**Default Admin Password:** `admin123`
+### Admin Credentials
+**Default Password:** `admin123` (⚠️ **Change for production!**)
 
-**To Change Password:**
-1. Open `app.py`
-2. Find line ~280: `ADMIN_PASSWORD = "admin123"`
-3. Change to your desired password
-4. Save and restart application
+### Change Password (Recommended)
 
-**For Production:** Use environment variables (see DEPLOYMENT_GUIDE.md)
+**Method 1: Environment Variables (Recommended)**
+```bash
+# Create .env file
+ADMIN_PASSWORD=your_secure_password
+
+# Update app.py to read from environment
+import os
+ADMIN_PASSWORD = os.getenv('ADMIN_PASSWORD', 'admin123')
+```
+
+**Method 2: Direct Edit**
+1. Open [app.py](app.py#L280)
+2. Update `ADMIN_PASSWORD = "admin123"` to your password
+3. Save and restart
+
+**Security Best Practices:**
+- Use strong passwords (12+ characters, mixed case, numbers, symbols)
+- Never commit passwords to version control
+- Use environment variables in production
+- Enable HTTPS for production deployments
+- Regular security audits
 
 ---
 
@@ -434,7 +432,11 @@ docker run -p 8501:8501 grievance-app
 
 **Author:** Debasis Behera  
 **Repository:** https://github.com/Debasis-Behera4143/Grievence-Addressal-platform  
-**Admin Password:** `admin123`
+**Issues:** [Report a bug](https://github.com/Debasis-Behera4143/Grievence-Addressal-platform/issues)
+
+### **Contributing**
+
+We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ### **Project Files:**
 - Main App: `app.py`
@@ -457,7 +459,17 @@ docker run -p 8501:8501 grievance-app
 
 ## 📝 License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 📚 Documentation
+
+- **[README.md](README.md)** - Project overview and setup
+- **[DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)** - Detailed deployment instructions
+- **[DATABASE_ANALYSIS.md](DATABASE_ANALYSIS.md)** - Database schema documentation
+- **[CONTRIBUTING.md](CONTRIBUTING.md)** - Contribution guidelines
+- **[CHANGELOG.md](CHANGELOG.md)** - Version history and changes
 
 ---
 

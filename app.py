@@ -3,6 +3,7 @@ import pandas as pd
 from datetime import datetime
 import joblib
 import os
+from pathlib import Path
 
 from utils import (
     get_priority,
@@ -14,6 +15,11 @@ from utils import (
 )
 from database import GrievanceDatabase
 from report_generator import generate_pdf_report
+
+# ================= CONFIGURATION =================
+ADMIN_PASSWORD = os.getenv('ADMIN_PASSWORD', 'admin123')
+MODEL_PATH = os.getenv('MODEL_PATH', 'model/classifier.pkl')
+DB_PATH = os.getenv('DATABASE_PATH', 'data/grievances.db')
 
 # ================= PAGE CONFIG =================
 st.set_page_config(
@@ -132,20 +138,30 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ================= DATABASE & MODEL =================
-db = GrievanceDatabase()
+db = GrievanceDatabase(DB_PATH)
 
 @st.cache_resource
 def load_model():
-    path = "model/classifier.pkl"
-    return joblib.load(path) if os.path.exists(path) else None
+    """Load ML model from file with error handling."""
+    try:
+        if os.path.exists(MODEL_PATH):
+            return joblib.load(MODEL_PATH)
+        else:
+            st.warning(f"⚠️ Model not found at {MODEL_PATH}. Please run train_model.py")
+            return None
+    except Exception as e:
+        st.error(f"❌ Error loading model: {str(e)}")
+        return None
 
 model = load_model()
 
 def predict_category(text):
+    """Predict complaint category using ML model."""
     if model:
         try:
             return model.predict([text])[0]
-        except:
+        except Exception as e:
+            st.warning(f"Prediction error: {str(e)}. Using default category.")
             return "Administrative"
     return "Administrative"
 

@@ -1,3 +1,13 @@
+"""
+Grievance Database Module
+
+Provides SQLite database operations for the AI Grievance Redressal System.
+Handles complaint storage, retrieval, updates, and analytics with connection pooling
+and LRU caching for optimal performance.
+
+Author: Debasis Behera
+"""
+
 import sqlite3
 import json
 from datetime import datetime
@@ -8,6 +18,16 @@ import os
 
 
 class GrievanceDatabase:
+    """
+    Database handler for grievance management system.
+    
+    Manages complaint storage, retrieval, and analytics using SQLite.
+    Implements connection pooling and caching for performance optimization.
+    
+    Args:
+        db_path (str): Path to SQLite database file. Defaults to 'data/grievances.db'
+    """
+    
     def __init__(self, db_path="data/grievances.db"):
         self.db_path = db_path
 
@@ -21,6 +41,15 @@ class GrievanceDatabase:
     # --------------------------------------------------
     @contextmanager
     def get_connection(self):
+        """
+        Context manager for database connections.
+        
+        Ensures proper connection handling and automatic cleanup.
+        Returns Row objects for dict-like access.
+        
+        Yields:
+            sqlite3.Connection: Active database connection
+        """
         conn = sqlite3.connect(self.db_path, check_same_thread=False)
         conn.row_factory = sqlite3.Row
         try:
