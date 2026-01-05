@@ -16,28 +16,9 @@ Government bodies receive thousands of citizen grievances daily related to infra
 
 ---
 
-## 👥 Team Name
+## �‍💻 Author
 
-**techno_guys**
-
----
-
-## 🚀 Deployed Link
-
-**Live Application:** [https://smartgov-ai.streamlit.app/](https://smartgov-ai.streamlit.app/)
-
----
-
-## 🎥 2-Minute Demonstration Video Link
-
-**Video:** [Watch Demo Video](https://drive.google.com/file/d/1JgoNyL8P3_maxLiWyZkCaqm6ERUKWoAG/view?usp=drive_link)
-
----
-
-## 📊 PPT Link
-
-**Presentation:** [View Presentation](https://drive.google.com/file/d/1uKR24SjtiTx0BUGrXdx0z5zG39kfDanC/view?usp=sharing)
-
+**Debasis Behera**
 
 ---
 
@@ -160,8 +141,8 @@ Government bodies receive thousands of citizen grievances daily related to infra
 ### **1. Clone the Repository**
 
 ```bash
-git clone https://github.com/ByteQuest-2025/GFGBQ-Team-techno_guys.git
-cd GFGBQ-Team-techno_guys
+git clone https://github.com/Debasis-Behera4143/Grievence-Addressal-platform.git
+cd Grievence-Addressal-platform
 ```
 
 ### **2. Install Dependencies**
@@ -396,8 +377,8 @@ streamlit run app.py
 ```
 Access at: http://localhost:8501
 
-### **2. Streamlit Cloud (Current Deployment)**
-**Live URL:** https://smartgov-ai.streamlit.app/
+### **2. Streamlit Cloud**
+Deploy your own instance on Streamlit Cloud
 
 ### **3. Docker**
 ```bash
@@ -465,10 +446,8 @@ docker run -p 8501:8501 grievance-app
 
 ## 📞 Support & Contact
 
-**Team:** techno_guys  
-**Repository:** https://github.com/ByteQuest-2025/GFGBQ-Team-techno_guys  
-**Branch:** Debasis  
-**Live App:** https://smartgov-ai.streamlit.app/  
+**Author:** Debasis Behera  
+**Repository:** https://github.com/Debasis-Behera4143/Grievence-Addressal-platform  
 **Admin Password:** `admin123`
 
 ### **Project Files:**
@@ -482,7 +461,6 @@ docker run -p 8501:8501 grievance-app
 
 ## 🙏 Acknowledgments
 
-- **ByteQuest 2025** - Hackathon organizers
 - **NLTK** - Sentiment analysis library
 - **scikit-learn** - Machine learning framework
 - **Streamlit** - Web application framework
@@ -493,7 +471,7 @@ docker run -p 8501:8501 grievance-app
 
 ## 📝 License
 
-This project is developed for ByteQuest Hackathon 2025.
+This project is licensed under the MIT License.
 
 ---
 
@@ -508,14 +486,11 @@ This project is developed for ByteQuest Hackathon 2025.
 - ✅ Comprehensive documentation
 - ✅ Deployment guides included
 - ✅ Code quality verified
-- ✅ **Deployed on Streamlit Cloud**
-- ✅ Ready for hackathon presentation
+- ✅ Ready for production deployment
 
 ---
 
-**🎉 Ready for Production Deployment and Hackathon Presentation! 🎉**
+**🎉 Ready for Production Deployment! 🎉**
 
-**Repository:** https://github.com/ByteQuest-2025/GFGBQ-Team-techno_guys  
-**Live Demo:** https://smartgov-ai.streamlit.app/  
-**Team:** techno_guys  
-**ByteQuest Hackathon 2025** | Problem Statement PS-12
+**Repository:** https://github.com/Debasis-Behera4143/Grievence-Addressal-platform  
+**Author:** Debasis Behera
