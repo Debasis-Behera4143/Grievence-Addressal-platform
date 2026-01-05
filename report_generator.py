@@ -4,9 +4,14 @@ from reportlab.pdfgen import canvas
 
 def generate_pdf_report(ticket_id: str, data: dict):
     """
-    ticket_id : str
-    data      : dict (complaint details)
-    return    : file path of generated PDF
+    Generate PDF report for grievance complaint.
+    
+    Args:
+        ticket_id (str): Unique ticket identifier
+        data (dict): Complaint details dictionary
+        
+    Returns:
+        str: File path of generated PDF
     """
 
     # Create reports folder if not exists

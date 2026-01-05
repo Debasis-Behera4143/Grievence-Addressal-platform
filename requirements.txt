@@ -1,23 +1,20 @@
-# Core ML libraries
+# Core ML and Data Science
 pandas==2.3.3
 scikit-learn==1.7.2
 numpy==2.2.6
-
-# NLP libraries
-nltk==3.9.2
-
-# Model persistence
 joblib==1.5.2
 
-# Web framework
+# NLP
+nltk==3.9.2
+
+# Web Framework
 streamlit==1.52.1
 
-# Data visualization
+# Visualization
 plotly==5.24.1
 
-# PDF generation
+# Document Generation
 reportlab==4.2.2
 
-# Additional utilities
+# Utilities
 python-dateutil==2.9.0
-

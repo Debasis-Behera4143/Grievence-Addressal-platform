@@ -617,9 +617,9 @@ python -c "import nltk; nltk.download('all')"
 
 ### **Local (Windows):**
 ```powershell
-cd "C:\Users\debas\OneDrive\Desktop\Grievience report\GFGBQ-Team-techno_guys"
+# Navigate to your project directory
+cd path\to\Grievence-Addressal-platform
 pip install -r requirements.txt
-pip install plotly reportlab xlsxwriter
 python train_model.py
 streamlit run app.py
 ```
@@ -628,7 +628,7 @@ streamlit run app.py
 ```bash
 git add .
 git commit -m "Deploy to Streamlit Cloud"
-git push origin Debasis
+git push origin main
 # Then deploy via https://streamlit.io/cloud
 ```
 
@@ -657,10 +657,9 @@ docker run -d -p 8501:8501 --name grievance grievance-app
 - **PDF Generator:** report_generator.py
 
 ### **Documentation:**
-- **README.md** - Project overview
-- **DATABASE_ANALYSIS.md** - Database structure
-- **FUTURE_ERROR_ANALYSIS.md** - Error prevention
-- **DEPLOYMENT_GUIDE.md** - This file
+- **README.md** - Project overview and features
+- **DATABASE_ANALYSIS.md** - Database schema details
+- **DEPLOYMENT_GUIDE.md** - Deployment instructions (this file)
 
 ---
 

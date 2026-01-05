@@ -2,33 +2,28 @@
 
 ---
 
-## 📌 Problem Statement
-
-**PS-12: AI for Grievance Redressal in Public Governance**
+## 📌 Overview
 
 Government bodies receive thousands of citizen grievances daily related to infrastructure, sanitation, healthcare, public safety, utilities, and administrative delays. These grievances are often unstructured (free text, mixed languages) and manually processed, which slows resolution. The lack of intelligent prioritization and routing causes delayed resolution of critical issues, citizen dissatisfaction, and reduced transparency.
 
----
-
-## 🎯 Project Name
-
-**SmartGov AI — Intelligent Grievance Redressal System**
+**SmartGov AI** addresses these challenges using artificial intelligence and machine learning.
 
 ---
 
-## �‍💻 Author
+## 👨‍💻 Author
 
-**Debasis Behera**
+**Debasis Behera**  
+**GitHub:** [Debasis-Behera4143](https://github.com/Debasis-Behera4143)
 
 ---
 
-## 🌟 Project Overview
+## 🌟 SmartGov AI - Intelligent Grievance Redressal System
 
-**SmartGov AI** is a production-ready AI-powered system for intelligent government grievance classification, prioritization, and management. This enterprise-grade platform helps government bodies automatically understand, prioritize, and route citizen complaints using advanced Natural Language Processing (NLP) and Machine Learning.
+A production-ready AI-powered system for intelligent government grievance classification, prioritization, and management. This enterprise-grade platform helps government bodies automatically understand, prioritize, and route citizen complaints using advanced Natural Language Processing (NLP) and Machine Learning.
 
 [![Python](https://img.shields.io/badge/Python-3.13-blue.svg)](https://www.python.org/)
-[![Streamlit](https://img.shields.io/badge/Streamlit-1.52.1-FF4B4B.svg)](https://streamlit.io/)
-[![ML Accuracy](https://img.shields.io/badge/ML%20Accuracy-69.41%25-success.svg)](https://github.com)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.52-FF4B4B.svg)](https://streamlit.io/)
+[![ML Accuracy](https://img.shields.io/badge/ML%20Accuracy-69.41%25-success.svg)](#ml-model-performance)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 ### **Key Highlights:**
@@ -417,31 +412,20 @@ docker run -p 8501:8501 grievance-app
 
 ---
 
-## 🎯 Features Checklist
+## ✅ Features Status
 
-- [x] Multi-model ML training with ensemble methods
-- [x] 69.41% accuracy with voting classifier
-- [x] 6-category complaint classification
-- [x] 4-level priority detection (Critical/High/Medium/Low)
-- [x] NLTK VADER sentiment analysis
-- [x] Keyword extraction
-- [x] Resolution time estimation
-- [x] SQLite database with 16-column schema
-- [x] Contact information tracking (name, email, phone)
+**Machine Learning:**
+- [x] 69.41% accuracy with ensemble voting classifier
+- [x] 5 ML models (Logistic Regression, Random Forest, Gradient Boosting, Naive Bayes, Linear SVM)
+- [x] 6-category classification + 4-level priority detection
+- [x] NLTK sentiment analysis and keyword extraction
+
+**Application:**
 - [x] Admin authentication with password protection
-- [x] Session-based login/logout
-- [x] PDF report generation
-- [x] Government portal UI theme (orange gradient)
-- [x] Horizontal top navigation
+- [x] PDF report generation with ticket tracking
 - [x] Real-time analytics dashboard with Plotly
-- [x] Complaint tracking by ticket ID
-- [x] Status updates (Pending/In Progress/Resolved)
-- [x] CSV export functionality
-- [x] Mobile-responsive design
-- [x] Anonymous submission option
-- [x] Help section with instructions
-- [x] Enhanced dashboard with comprehensive metrics
-- [x] Deployed on Streamlit Cloud
+- [x] SQLite database with 16-column schema
+- [x] Mobile-responsive government portal UI
 - [x] Complete deployment documentation
 
 ---
@@ -477,22 +461,17 @@ This project is licensed under the MIT License.
 
 ---
 
-## ✅ Production Readiness
+## ✅ Production Ready
 
 - ✅ All errors fixed and tested
-- ✅ All deprecation warnings resolved
 - ✅ Future compatibility ensured (Streamlit 2.x ready)
 - ✅ Database schema validated
 - ✅ ML model trained and optimized
-- ✅ Admin authentication implemented
-- ✅ Comprehensive documentation
-- ✅ Deployment guides included
+- ✅ Comprehensive documentation included
 - ✅ Code quality verified
-- ✅ Ready for production deployment
 
 ---
 
-**🎉 Ready for Production Deployment! 🎉**
-
 **Repository:** https://github.com/Debasis-Behera4143/Grievence-Addressal-platform  
-**Author:** Debasis Behera
+**Author:** Debasis Behera  
+**License:** MIT
