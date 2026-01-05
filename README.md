@@ -263,7 +263,7 @@ streamlit run app.py
 ## 📁 Project Structure
 
 ```
-GFGBQ-Team-techno_guys/
+Grievence-Addressal-platform/
 ├── app.py                      # Main Streamlit application
 ├── database.py                 # SQLite database operations
 ├── utils.py                    # Helper functions (priority, sentiment, etc.)
@@ -273,11 +273,13 @@ GFGBQ-Team-techno_guys/
 ├── README.md                   # Project documentation
 ├── DEPLOYMENT_GUIDE.md         # Complete deployment instructions
 ├── DATABASE_ANALYSIS.md        # Database schema documentation
-├── PRESENTATION_SLIDES.txt     # Hackathon presentation content
 ├── data/
 │   ├── cleaned_data.csv        # Training dataset (500+ complaints)
 │   └── grievances.db           # SQLite database (auto-created)
 └── model/
+    ├── classifier.pkl          # Trained ML model
+    └── model_metadata.json     # Model performance metrics
+```
     ├── classifier.pkl          # Trained ML model
     └── model_metadata.json     # Model performance metrics
 ```

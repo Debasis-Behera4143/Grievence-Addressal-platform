@@ -1,7 +1,7 @@
 # 🚀 COMPLETE DEPLOYMENT GUIDE
 
 **Project:** AI Grievance Redressal System  
-**Date:** January 4, 2026  
+**Author:** Debasis Behera  
 **Admin Password:** `admin123`
 
 ---
@@ -27,15 +27,14 @@
 
 ### **Step 1: Clone Repository**
 ```bash
-# Navigate to your desired directory
-cd "C:\Users\debas\OneDrive\Desktop\Grievience report"
-
 # Clone from GitHub
-git clone https://github.com/ByteQuest-2025/GFGBQ-Team-techno_guys.git
+git clone https://github.com/Debasis-Behera4143/Grievence-Addressal-platform.git
+
+# Navigate to project directory
+cd Grievence-Addressal-platform
 
 # Or if already cloned, pull latest changes
-cd GFGBQ-Team-techno_guys
-git pull origin Debasis
+git pull origin main
 ```
 
 ### **Step 2: Install Dependencies**
@@ -103,8 +102,8 @@ git push origin Debasis
 ### **Step 3: Deploy Application**
 1. Click **"New app"** button
 2. Configure deployment:
-   - **Repository:** ByteQuest-2025/GFGBQ-Team-techno_guys
-   - **Branch:** Debasis
+   - **Repository:** Debasis-Behera4143/Grievence-Addressal-platform
+   - **Branch:** main
    - **Main file path:** app.py
    - **App URL:** (choose custom URL)
 
@@ -241,17 +240,14 @@ docker rmi grievance-ai-app
 
 ### **Step 1: Push Code to GitHub**
 ```bash
-# Navigate to project directory
-cd "C:\Users\debas\OneDrive\Desktop\Grievience report\GFGBQ-Team-techno_guys"
-
 # Stage all changes
 git add .
 
 # Commit changes
-git commit -m "Add admin authentication and deployment configuration"
+git commit -m "Update deployment configuration"
 
-# Push to Debasis branch
-git push origin Debasis
+# Push to main branch
+git push origin main
 ```
 
 ### **Step 2: Create README.md**
@@ -262,7 +258,7 @@ git push origin Debasis
 
 ### **Step 3: Verify Repository Structure**
 ```
-GFGBQ-Team-techno_guys/
+Grievence-Addressal-platform/
 ├── app.py                    # Main application
 ├── database.py               # Database operations
 ├── utils.py                  # Helper functions
@@ -651,8 +647,7 @@ docker run -d -p 8501:8501 --name grievance grievance-app
 
 ### **Application URLs:**
 - **Local:** http://localhost:8501
-- **GitHub:** https://github.com/ByteQuest-2025/GFGBQ-Team-techno_guys
-- **Streamlit Cloud:** (Configure after deployment)
+- **GitHub:** https://github.com/Debasis-Behera4143/Grievence-Addressal-platform
 
 ### **Key Files:**
 - **Main App:** app.py
